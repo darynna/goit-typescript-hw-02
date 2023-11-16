@@ -5,11 +5,15 @@
 
 
 
-interface KeyValuePair<T, S, K> {
-  key: T | S;
-  value: K;
+interface KeyValuePair<T extends string | symbol, U extends any> {
+  key: T;
+  value: U;
 }
 
-const number : KeyValuePair<string, symbol, number> = {key: "age", value: 18}
+// interface KeyValuePair<T extends string | symbol, U extends any> {
+//   key: T;
+//   value: U;  }
+
+const number : KeyValuePair<string, number> = {key: "age", value: 18}
 
 export {};
